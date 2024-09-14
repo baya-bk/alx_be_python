@@ -1,5 +1,5 @@
-number1 = int(10)
-number2 = int(5)
+number1 = 10
+number2 = 5
 
 # Addition
 sum = number1 + number2
@@ -8,7 +8,7 @@ sum = number1 + number2
 sub = number1 - number2
 
 # Multiplication
-product = number1 * number2  # Add this line for multiplication
+product = number1 * number2
 
 # Print the results
 print("sum of", number1, "and", number2, "is", sum)
