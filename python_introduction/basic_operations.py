@@ -1,6 +1,6 @@
-number2 = int(10)
-number1 = int(5)
-sum = number2 + number1 
-sub = number2 - number1 
-print("sum of", number2, "and", number1, "is", sum) 
-print("subtraction of", number2, "and", number1, "is", sub)
+number1 = int(10)
+number2 = int(5)
+sum = number1 + number1 
+sub = number1 - number2 
+print("sum of", number1, "and", number2, "is", sum) 
+print("subtraction of", number1, "and", number2, "is", sub)
