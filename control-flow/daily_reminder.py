@@ -1,41 +1,38 @@
 # daily_reminder.py
 
-def get_task_details():
-    # Prompt for task details
-    task = input("Enter your task: ")
+# Ask the user for task details
+task = input("Enter your task: ")
+
+# Loop until a valid priority is entered
+while True:
     priority = input("Priority (high/medium/low): ").lower()
-    time_bound = input("Is it time-bound? (yes/no): ").lower()
-
-    return task, priority, time_bound
-
-
-def build_reminder(task, priority, time_bound):
-    match priority:
-        case "high":
-            message = f"'{task}' is a high priority task"
-        case "medium":
-            message = f"'{task}' is a medium priority task"
-        case "low":
-            message = f"'{task}' is a low priority task"
-        case _:
-            message = f"'{task}' has an undefined priority"
-
-    if time_bound == "yes":
-        message += " that requires immediate attention today!"
+    if priority in ['high', 'medium', 'low']:
+        break
     else:
-        message += ". Consider completing it when you have free time."
+        print("Please enter a valid priority (high/medium/low).")
 
-    return message
+# Loop until a valid response is entered for time-bound
+while True:
+    time_bound = input("Is it time-bound? (yes/no): ").lower()
+    if time_bound in ['yes', 'no']:
+        break
+    else:
+        print("Please enter 'yes' or 'no'.")
 
+# Use a match-case statement to react based on priority
+match priority:
+    case "high":
+        message = f"'{task}' is a high priority task"
+    case "medium":
+        message = f"'{task}' is a medium priority task"
+    case "low":
+        message = f"'{task}' is a low priority task"
 
-def main():
-    # Get task details
-    task, priority, time_bound = get_task_details()
+# Check if the task is time-bound and modify the message
+if time_bound == "yes":
+    message += " that requires immediate attention today!"
+else:
+    message += ". Consider completing it when you have free time."
 
-    # Build and display the reminder
-    reminder = build_reminder(task, priority, time_bound)
-    print(reminder)
-
-
-if __name__ == "__main__":
-    main()
+# Print the reminder message
+print(message)
