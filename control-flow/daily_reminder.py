@@ -8,21 +8,20 @@ time_bound = input("Is it time-bound? (yes/no): ").lower()
 # Use match-case to handle task priority and if-statement for time sensitivity
 match priority:
     case "high":
-        message = f"'{task}' is a high priority task"
+        print(f"'{task}' is a high priority task", end="")
         if time_bound == "yes":
-            message += " that requires immediate attention today!"
+            print(" that requires immediate attention today!")
+        else:
+            print(". Consider completing it when you have free time.")
     case "medium":
-        message = f"'{task}' is a medium priority task"
+        print(f"'{task}' is a medium priority task", end="")
         if time_bound == "yes":
-            message += " that you should aim to complete today."
+            print(" that you should aim to complete today.")
+        else:
+            print(". Consider completing it when you have free time.")
     case "low":
-        message = f"'{task}' is a low priority task"
+        print(f"'{task}' is a low priority task", end="")
         if time_bound == "yes":
-            message += " that can be done when convenient today."
-
-# For non-time-sensitive tasks, add this outside the match block
-if time_bound == "no":
-    message += ". Consider completing it when you have free time."
-
-# Print the customized reminder
-print(message)
+            print(" that can be done when convenient today.")
+        else:
+            print(". Consider completing it when you have free time.")
