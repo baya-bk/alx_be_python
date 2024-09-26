@@ -9,32 +9,32 @@ def get_task_details():
     return task, priority, time_bound
 
 
-def provide_reminder(task, priority, time_bound):
+def build_reminder(task, priority, time_bound):
     match priority:
         case "high":
-            reminder = f"'{task}' is a high priority task"
+            message = f"'{task}' is a high priority task"
         case "medium":
-            reminder = f"'{task}' is a medium priority task"
+            message = f"'{task}' is a medium priority task"
         case "low":
-            reminder = f"'{task}' is a low priority task"
+            message = f"'{task}' is a low priority task"
         case _:
-            reminder = f"'{task}' has an undefined priority"
+            message = f"'{task}' has an undefined priority"
 
-    # Add time-bound condition to the reminder
     if time_bound == "yes":
-        reminder += " that requires immediate attention today!"
+        message += " that requires immediate attention today!"
     else:
-        reminder += ". Consider completing it when you have free time."
+        message += ". Consider completing it when you have free time."
 
-    print(f"\nReminder: {reminder}")
+    return message
 
 
 def main():
-    # Get task details from the user
+    # Get task details
     task, priority, time_bound = get_task_details()
 
-    # Provide customized reminder
-    provide_reminder(task, priority, time_bound)
+    # Build and display the reminder
+    reminder = build_reminder(task, priority, time_bound)
+    print(reminder)
 
 
 if __name__ == "__main__":
