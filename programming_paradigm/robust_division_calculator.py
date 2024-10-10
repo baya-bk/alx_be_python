@@ -12,7 +12,7 @@ def safe_divide(numerator, denominator):
         return None
     except ValueError:
         # Handle invalid input types (e.g., if non-numeric values are passed)
-        print("Error: Please enter valid numeric values.")
+        print("Error: Please enter numeric values only.")
         return None
     else:
         # No errors, return the result
