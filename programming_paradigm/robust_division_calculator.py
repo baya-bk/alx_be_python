@@ -19,4 +19,4 @@ def safe_divide(numerator, denominator):
         return result
     finally:
         # Optional: This block always runs, regardless of whether an exception occurred or not
-        print("Division operation complete.")
+        print("The result of the division is ")
