@@ -1,14 +1,18 @@
 def safe_divide(numerator, denominator):
     try:
+        # Convert inputs to floats to handle division
+        numerator = float(numerator)
+        denominator = float(denominator)
+
         # Attempt division
         result = numerator / denominator
     except ZeroDivisionError:
         # Handle division by zero
         print("Error: Cannot divide by zero.")
         return None
-    except TypeError:
+    except ValueError:
         # Handle invalid input types (e.g., if non-numeric values are passed)
-        print("Error: Both inputs must be numbers.")
+        print("Error: Please enter valid numeric values.")
         return None
     else:
         # No errors, return the result
