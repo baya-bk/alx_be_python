@@ -11,8 +11,7 @@ def main():
     denominator = sys.argv[2]
 
     result = safe_divide(numerator, denominator)
-    if result is not None:
-        print(f"The result of the division is {result}")
+    print(result)
 
 
 if __name__ == "__main__":

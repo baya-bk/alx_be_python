@@ -3,7 +3,6 @@ def safe_divide(numerator, denominator):
         # Convert inputs to floats to handle division
         numerator = float(numerator)
         denominator = float(denominator)
-
         # Attempt division
         result = numerator / denominator
     except ZeroDivisionError:
@@ -15,3 +14,5 @@ def safe_divide(numerator, denominator):
     else:
         # No errors, return the result
         return result
+    finally:
+        print("The result of the division is")
